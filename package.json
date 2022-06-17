@@ -1,8 +1,8 @@
 {
   "name": "myflix-client",
   "version": "1.0.0",
-  "description": "Using React, build the client-side for an application called myFlix based on",
-  "main": "src/index.html",
+  "description": "Using React, build the client-side for an application called myFlix based on its existing server-side code (REST API and database).",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/leevee6039/myFlix-client/issues"
   },
-  "homepage": "https://github.com/leevee6039/myFlix-client#readme"
+  "homepage": "https://github.com/leevee6039/myFlix-client#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-rc.0"
+  }
 }
