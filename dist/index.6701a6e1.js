@@ -967,7 +967,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                     children: " 🎭 Hello React!! 🚀"
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    class: "main",
+                    className: "main",
                     __source: {
                         fileName: "src/index.jsx",
                         lineNumber: 13
@@ -975,7 +975,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            class: "ellipse",
+                            className: "ellipse",
                             __source: {
                                 fileName: "src/index.jsx",
                                 lineNumber: 14
@@ -983,7 +983,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                             __self: this
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            class: "ellipse2",
+                            className: "ellipse2",
                             __source: {
                                 fileName: "src/index.jsx",
                                 lineNumber: 15
@@ -991,7 +991,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                             __self: this
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            class: "ellipse3",
+                            className: "ellipse3",
                             __source: {
                                 fileName: "src/index.jsx",
                                 lineNumber: 16
@@ -999,7 +999,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
                             __self: this
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            class: "ball",
+                            className: "ball",
                             __source: {
                                 fileName: "src/index.jsx",
                                 lineNumber: 17

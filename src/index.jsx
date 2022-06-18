@@ -10,11 +10,11 @@ class MyFlixApplication extends React.Component {
     return (
       <div className="my-flix">
         <h1> 🎭 Hello React!! &#128640;</h1>
-        <div class="main">
-          <div class="ellipse"></div>
-          <div class="ellipse2"></div>
-          <div class="ellipse3"></div>
-          <div class="ball"></div>
+        <div className="main">
+          <div className="ellipse"></div>
+          <div className="ellipse2"></div>
+          <div className="ellipse3"></div>
+          <div className="ball"></div>
         </div>
       </div>
     );
