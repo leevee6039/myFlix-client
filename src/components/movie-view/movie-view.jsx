@@ -11,6 +11,7 @@ export class MovieView extends Component {
             height={300}
             width={200}
             alt={movie.Title + ' poster'}
+            crossOrigin="true"
           />
         </div>
         <div className="movie-title">
