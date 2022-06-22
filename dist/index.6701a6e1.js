@@ -4063,6 +4063,8 @@ class MovieCard extends _react.Component {
                     variant: "top",
                     src: movie.ImagePath,
                     alt: movie.Title + ' poster',
+                    height: 300,
+                    width: 200,
                     crossOrigin: "true",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
@@ -4073,14 +4075,14 @@ class MovieCard extends _react.Component {
                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 18
+                        lineNumber: 20
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 19
+                                lineNumber: 21
                             },
                             __self: this,
                             children: movie.Title
@@ -4089,7 +4091,7 @@ class MovieCard extends _react.Component {
                             className: "text-justify",
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 20
+                                lineNumber: 22
                             },
                             __self: this,
                             children: movie.Description
@@ -4100,7 +4102,7 @@ class MovieCard extends _react.Component {
                             variant: "link",
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 21
+                                lineNumber: 23
                             },
                             __self: this,
                             children: "Open"
