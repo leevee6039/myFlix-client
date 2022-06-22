@@ -20,7 +20,7 @@ export class MovieCard extends Component {
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
           <Card.Text className="text-justify">{movie.Description}</Card.Text>
-          <Button onClick={() => onMovieClick(movie)} variant="link">
+          <Button onClick={() => onMovieClick(movie)} variant="primary">
             Open
           </Button>
         </Card.Body>
