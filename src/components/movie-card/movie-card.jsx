@@ -13,6 +13,8 @@ export class MovieCard extends Component {
           variant="top"
           src={movie.ImagePath}
           alt={movie.Title + ' poster'}
+          height={300}
+          width={200}
           crossOrigin="true"
         />
         <Card.Body>
