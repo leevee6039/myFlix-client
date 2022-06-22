@@ -4099,7 +4099,7 @@ class MovieCard extends _react.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                             onClick: ()=>onMovieClick(movie)
                             ,
-                            variant: "link",
+                            variant: "primary",
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
                                 lineNumber: 23
