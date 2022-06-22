@@ -1,4 +1,15 @@
 import React, { useState } from 'react';
+import {
+  Button,
+  Container,
+  Form,
+  Row,
+  Col,
+  CardGroup,
+  Card
+} from 'react-bootstrap';
+
+import './registration-view.scss';
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
@@ -14,54 +25,74 @@ export function RegistrationView(props) {
     props.onRegistration(username);
   };
   return (
-    <>
-      <h1>Register to myFlix</h1>
-      <form>
-        <label>
-          Username:
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </label>
-        <br />
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <br />
-        <br />
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <br />
-        <br />
-        <label>
-          Date of birth:
-          <input
-            type="date"
-            value={birthday}
-            onChange={(e) => setBirthday(e.target.value)}
-          />
-        </label>
-        <br />
-        <br />
-        <button type="reset">Clear</button>
-        <button type="submit" onClick={handleSubmit}>
-          Register
-        </button>
-      </form>
-    </>
+    <Container>
+      <Row>
+        <Col>
+          <CardGroup>
+            <Card>
+              <Card.Body>
+                <Card.Title>Register to myFlix</Card.Title>
+                <Form>
+                  <Form.Group className="mb-3" controlId="formUsername">
+                    <Form.Label>Username:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                      placeholder="Enter your Username"
+                      required
+                    />
+                  </Form.Group>
+
+                  <Form.Group className="mb-3" controlId="formPassword">
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Enter your Password"
+                      minLength="8"
+                      required
+                    />
+                    <Form.Text className="text-muted">
+                      Your password must be 8 or more characters.
+                    </Form.Text>
+                  </Form.Group>
+
+                  <Form.Group className="mb-3" controlId="formEmail">
+                    <Form.Label>Email:</Form.Label>
+                    <Form.Control
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your Email"
+                      required
+                    />
+                  </Form.Group>
+
+                  <Form.Group className="mb-3" controlId="formDob">
+                    <Form.Label>Date of birth:</Form.Label>
+                    <Form.Control
+                      type="date"
+                      value={birthday}
+                      onChange={(e) => setBirthday(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+
+                  <Button
+                    varient="primary"
+                    type="submit"
+                    onClick={handleSubmit}
+                  >
+                    Register
+                  </Button>
+                </Form>
+              </Card.Body>
+            </Card>
+          </CardGroup>
+        </Col>
+      </Row>
+    </Container>
   );
 }
