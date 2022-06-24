@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import {
   Button,
   Container,
@@ -16,13 +17,70 @@ export function RegistrationView(props) {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
+  const [fieldErrors, setFieldErrors] = useState({
+    usernameErr: '',
+    passwordErr: '',
+    emailErr: '',
+    birthdayErr: ''
+  });
+
+  const validate = () => {
+    let isReq = true;
+    if (!username) {
+      setFieldErrors({ ...fieldErrors, usernameErr: 'Username required' });
+      isReq = false;
+    } else if (username.length < 2) {
+      setFieldErrors({
+        ...fieldErrors,
+        usernameErr: 'Username must be 2 characters long'
+      });
+      isReq = false;
+    } else if (!password) {
+      setFieldErrors({ ...fieldErrors, passwordErr: 'Password required' });
+      isReq = false;
+    } else if (password.length < 6) {
+      setFieldErrors({
+        ...fieldErrors,
+        passwordErr: 'Password must be 6 characters long'
+      });
+      isReq = false;
+    } else if (!email) {
+      setFieldErrors({ ...fieldErrors, emailErr: 'Email required' });
+      isReq = false;
+    } else if (email.indexOf('@') === -1) {
+      setFieldErrors({ ...fieldErrors, emailErr: 'Invalid email' });
+      isReq = false;
+    }
+    return isReq;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(username);
+    const isReq = validate();
+    if (isReq) {
+      /** Send a request to the server for authentication */
+      axios
+        .post('https://lee-movies.herokuapp.com/users', {
+          Username: username,
+          Password: password,
+          Email: email,
+          Birthday: birthday
+        })
+        .then((response) => {
+          const data = response.data;
+          props.onRegistration(data);
+          console.log(data);
+          alert('Registration succesfull');
+          window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
+        })
+        .catch((error) => {
+          console.log(error + ' Registration failed');
+        });
+    }
     /** Send a request to the server for authentication */
     /** then call props.onRegistration(username) */
-    props.onRegistration(username);
+    // props.onRegistration(username);
   };
   return (
     <Container className="mt-5 mb-5">
@@ -41,7 +99,11 @@ export function RegistrationView(props) {
                       onChange={(e) => setUsername(e.target.value)}
                       placeholder="Enter your Username"
                       required
+                      autoComplete="off"
                     />
+                    {fieldErrors.usernameErr && (
+                      <p className="text-danger">{fieldErrors.usernameErr}</p>
+                    )}
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formPassword">
@@ -53,10 +115,14 @@ export function RegistrationView(props) {
                       placeholder="Enter your Password"
                       minLength="8"
                       required
+                      autoComplete="off"
                     />
                     <Form.Text className="text-muted">
                       Your password must be 8 or more characters.
                     </Form.Text>
+                    {fieldErrors.passwordErr && (
+                      <p className="text-danger">{fieldErrors.passwordErr}</p>
+                    )}
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formEmail">
@@ -67,7 +133,11 @@ export function RegistrationView(props) {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your Email"
                       required
+                      autoComplete="off"
                     />
+                    {fieldErrors.emailErr && (
+                      <p className="text-danger">{fieldErrors.emailErr}</p>
+                    )}
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formDob">
@@ -77,6 +147,7 @@ export function RegistrationView(props) {
                       value={birthday}
                       onChange={(e) => setBirthday(e.target.value)}
                       required
+                      autoComplete="off"
                     />
                   </Form.Group>
 

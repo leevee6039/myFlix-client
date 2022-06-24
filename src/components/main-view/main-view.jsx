@@ -44,6 +44,19 @@ export class MainView extends React.Component {
       });
   }
 
+  createUser(token) {
+    axios
+      .post('https://lee-movies.herokuapp.com/users', {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      .then((response) => {
+        this.setState({ users: response.data });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   // onClick handler function for viewing movie-card
   setSelectedMovie(movie) {
     this.setState({ selectedMovie: movie });
@@ -51,10 +64,14 @@ export class MainView extends React.Component {
 
   /** When a user succesfully registers in, this function `register` property in state to that particular user */
 
-  onRegistration(register) {
+  onRegistration(authData) {
+    console.log('authData-->', authData);
     this.setState({
-      register
+      register: { ...authData }
     });
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.Username);
+    this.createUser(authData.token);
   }
 
   /** When a user succesfully logs in, this function updates the`user` property in state to that particular user*/
