@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, CardGroup } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 
@@ -10,23 +10,25 @@ export class MovieCard extends Component {
   render() {
     const { movie } = this.props;
     return (
-      <Card>
-        <Card.Img
-          variant="top"
-          src={movie.ImagePath}
-          alt={movie.Title + ' poster'}
-          height={300}
-          width={200}
-          crossOrigin="true"
-        />
-        <Card.Body>
-          <Card.Title>{movie.Title}</Card.Title>
-          <Card.Text className="text-justify">{movie.Description}</Card.Text>
-          <Link to={`movies/$movies._id`}>
-            <Button variant="primary">Open</Button>
-          </Link>
-        </Card.Body>
-      </Card>
+      <CardGroup>
+        <Card>
+          <Card.Img
+            variant="top"
+            src={movie.ImagePath}
+            alt={movie.Title + ' poster'}
+            height={300}
+            width={200}
+            crossOrigin="true"
+          />
+          <Card.Body>
+            <Card.Title>{movie.Title}</Card.Title>
+            <Card.Text className="text-justify">{movie.Description}</Card.Text>
+            <Link to={`movies/$movies._id`}>
+              <Button variant="primary">Open</Button>
+            </Link>
+          </Card.Body>
+        </Card>
+      </CardGroup>
     );
   }
 }
