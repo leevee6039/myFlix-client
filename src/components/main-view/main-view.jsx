@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { MovieCard } from '../movie-card/movie-card';
@@ -115,47 +117,53 @@ export class MainView extends React.Component {
     } else {
       return (
         <>
-          <div className="d-flex justify-content-between mb-3">
-            <h1> 🎭 Movies &#128640;</h1>
-            <Button
-              variant="danger"
-              onClick={() => {
-                this.onLoggedOut();
-              }}
-            >
-              Logout
-            </Button>
-          </div>
+          <Router>
+            <div className="d-flex justify-content-between mb-3">
+              <h1> 🎭 Movies &#128640;</h1>
+              <Button
+                variant="danger"
+                onClick={() => {
+                  this.onLoggedOut();
+                }}
+              >
+                Logout
+              </Button>
+            </div>
 
-          <Row className="main-view justify-content-md-center">
-            {selectedMovie ? (
-              <Col md={8} className="d-flex align-items-stretch mb-3">
-                <MovieView
-                  movie={selectedMovie}
-                  onBackClick={(newSelectedMovie) => {
-                    this.setSelectedMovie(newSelectedMovie);
+            <Row className="main-view justify-content-md-center">
+              <Routes>
+                <Route
+                  exact
+                  path="/"
+                  render={() => {
+                    return movies.map((m) => (
+                      <Col md={3} key={m._id}>
+                        <MovieCard movie={m} />
+                      </Col>
+                    ));
                   }}
                 />
-              </Col>
-            ) : (
-              movies.map((movie) => (
-                <Col
-                  sm={6}
-                  md={4}
-                  lg={3}
-                  className="d-flex align-items-stretch mb-3"
-                >
-                  <MovieCard
-                    key={movie._id}
-                    movie={movie}
-                    onMovieClick={(newSelectedMovie) =>
-                      this.setSelectedMovie(newSelectedMovie)
-                    }
-                  />
-                </Col>
-              ))
-            )}
-          </Row>
+              </Routes>
+
+              <Routes>
+                <Route
+                  path="/movies/:movieId"
+                  render={({ match, history }) => {
+                    return (
+                      <Col md={8}>
+                        <MovieView
+                          movie={movies.find(
+                            (m) => m._id === match.param.movieId
+                          )}
+                          onBackClick={() => history.goBack()}
+                        />
+                      </Col>
+                    );
+                  }}
+                />
+              </Routes>
+            </Row>
+          </Router>
         </>
       );
     }
