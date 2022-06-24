@@ -5,7 +5,7 @@ import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-import { Col, Row } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 
 import './main-view.scss';
 
@@ -20,10 +20,22 @@ export class MainView extends React.Component {
     };
   }
 
-  // GET movies
   componentDidMount() {
+    let accessToken = localStorage.getItem('token');
+    if (!!accessToken) {
+      this.setState({
+        user: localStorage.getItem('user')
+      });
+      this.getMovies(accessToken);
+    }
+  }
+
+  // GET movies
+  getMovies(token) {
     axios
-      .get('https://lee-movies.herokuapp.com/movies')
+      .get('https://lee-movies.herokuapp.com/movies', {
+        headers: { Authorization: `Bearer ${token}` }
+      })
       .then((response) => {
         this.setState({ movies: response.data });
       })
@@ -47,9 +59,21 @@ export class MainView extends React.Component {
 
   /** When a user succesfully logs in, this function updates the`user` property in state to that particular user*/
 
-  onLoggedIn(user) {
+  onLoggedIn(authData) {
+    console.log('authData-->', authData);
     this.setState({
-      user
+      user: authData.user.Username
+    });
+
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.Username);
+    this.getMovies(authData.token);
+  }
+
+  onLoggedOut() {
+    localStorage.clear();
+    this.setState({
+      user: null
     });
   }
 
@@ -74,7 +98,18 @@ export class MainView extends React.Component {
     } else {
       return (
         <>
-          <h1> 🎭 Movies &#128640;</h1>
+          <div className="d-flex justify-content-between mb-3">
+            <h1> 🎭 Movies &#128640;</h1>
+            <Button
+              variant="danger"
+              onClick={() => {
+                this.onLoggedOut();
+              }}
+            >
+              Logout
+            </Button>
+          </div>
+
           <Row className="main-view justify-content-md-center">
             {selectedMovie ? (
               <Col md={8} className="d-flex align-items-stretch mb-3">
@@ -87,7 +122,12 @@ export class MainView extends React.Component {
               </Col>
             ) : (
               movies.map((movie) => (
-                <Col md={3} className="d-flex align-items-stretch mb-3">
+                <Col
+                  sm={6}
+                  md={4}
+                  lg={3}
+                  className="d-flex align-items-stretch mb-3"
+                >
                   <MovieCard
                     key={movie._id}
                     movie={movie}
