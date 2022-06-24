@@ -25,9 +25,9 @@ export function RegistrationView(props) {
     props.onRegistration(username);
   };
   return (
-    <Container>
-      <Row>
-        <Col>
+    <Container className="mt-5 mb-5">
+      <Row className="d-flex justify-content-center">
+        <Col xs={12} sm={12} md={6} lg={6}>
           <CardGroup>
             <Card>
               <Card.Body>
