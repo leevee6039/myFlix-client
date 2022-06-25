@@ -23,7 +23,7 @@ export class MovieCard extends Component {
           <Card.Body>
             <Card.Title>{movie.Title}</Card.Title>
             <Card.Text className="text-justify">{movie.Description}</Card.Text>
-            <Link to={`movies/$movies._id`}>
+            <Link to={`movies/${movie._id}`}>
               <Button variant="primary">Open</Button>
             </Link>
           </Card.Body>
@@ -48,6 +48,6 @@ MovieCard.propTypes = {
       Birth: PropTypes.string,
       Death: PropTypes.any
     })
-  }).isRequired,
-  onMovieClick: PropTypes.func.isRequired
+  }).isRequired
+  // onMovieClick: PropTypes.func.isRequired
 };

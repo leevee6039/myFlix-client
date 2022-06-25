@@ -54,9 +54,9 @@ export function RegistrationView(props) {
     return isReq;
   };
 
-  const handleSubmit = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-    console.log(username);
+    console.log(username, password, email, birthday);
     const isReq = validate();
     if (isReq) {
       /** Send a request to the server for authentication */
@@ -69,13 +69,13 @@ export function RegistrationView(props) {
         })
         .then((response) => {
           const data = response.data;
-          props.onRegistration(data);
+          // props.onRegistration(data);
           console.log(data);
-          alert('Registration succesfull');
+          alert('Registration succesfull, please login');
           window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
         })
         .catch((error) => {
-          console.log(error + ' Registration failed');
+          console.error(error, ' Registration failed');
         });
     }
     /** Send a request to the server for authentication */
@@ -154,7 +154,7 @@ export function RegistrationView(props) {
                   <Button
                     varient="primary"
                     type="submit"
-                    onClick={handleSubmit}
+                    onClick={handleRegister}
                   >
                     Register
                   </Button>

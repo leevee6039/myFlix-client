@@ -13,11 +13,11 @@ export class MovieView extends Component {
               <CardGroup>
                 <Card>
                   <Card.Img
-                    variant="right"
+                    variant="top"
                     src={movie.ImagePath}
                     alt={movie.Title + ' poster'}
-                    height={300}
-                    width={200}
+                    height={500}
+                    // width={200}
                     crossOrigin="true"
                   />
                   <Card.Body>
@@ -25,18 +25,30 @@ export class MovieView extends Component {
                     <Card.Subtitle>
                       Genre:
                       <Link to={`/genres/${movie.Genre.Name}`}>
-                        <Button varient="link">{movie.Genre.Name}</Button>
+                        <Button
+                          varient="link"
+                          className="btn btn-link bg-transparent border-0"
+                        >
+                          {movie.Genre.Name}
+                        </Button>
                       </Link>
                     </Card.Subtitle>
                     <Card.Subtitle>
                       Director:
                       <Link to={`/directors/${movie.Director.Name}`}>
-                        <Button varient="link">{movie.Director.Name}</Button>
+                        <Button
+                          varient="link"
+                          className="btn btn-link bg-transparent border-0"
+                        >
+                          {movie.Director.Name}
+                        </Button>
                       </Link>
                     </Card.Subtitle>
-                    <Card.Subtitle>Description</Card.Subtitle>
-                    <Card.Text>{movie.Descrption}</Card.Text>
+                    <br />
+                    <Card.Subtitle>Description:</Card.Subtitle>
+                    <Card.Text>{movie.Description}</Card.Text>
                     <Button
+                      className="btn btn-secondary"
                       onClick={() => {
                         onBackClick();
                       }}

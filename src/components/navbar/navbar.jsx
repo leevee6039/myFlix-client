@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 
 export function Menubar({ user }) {
+  //Logot handler
   const onLoggedOut = () => {
     localStorage.clear();
     window.open('/', '_self');
@@ -20,11 +21,11 @@ export function Menubar({ user }) {
   return (
     <>
       <Navbar
-        bg="dark"
-        expand="lg"
-        className="main-view"
+        bg="light"
+        expand="md"
+        className="main-view mb-2"
         sticky="top"
-        variant="dark"
+        variant="light"
       >
         <Container>
           <Navbar.Brand href="/" className="navbar-logo">
@@ -36,9 +37,10 @@ export function Menubar({ user }) {
               {isAuth() && <Nav.Link href={`/users/${user}`}>{user}</Nav.Link>}
               {isAuth() && (
                 <Button
-                  varient="link"
+                  className="btn btn-secondary"
+                  varient="secondary"
                   onClick={() => {
-                    this.onLoggedOut();
+                    onLoggedOut();
                   }}
                 >
                   Logout
