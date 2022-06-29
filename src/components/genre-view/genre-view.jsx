@@ -4,7 +4,6 @@ import { Button, Card, CardGroup } from 'react-bootstrap';
 export function GenreView({ genre, onBackClick }) {
   return (
     <>
-      {console.log(genre)}
       <CardGroup>
         <Card>
           <Card.Body>

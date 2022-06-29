@@ -11,16 +11,16 @@ export function FavoriteMoviesView({
 }) {
   //map Movie ID function
   const favoriteMovieId = favoriteMovies.map((id) => id);
-  console.log('favoriteMovies from fav view--> ', favoriteMovies);
-  console.log('favoriteMovieId-->', favoriteMovieId);
+  // console.log('favoriteMovies from fav view--> ', favoriteMovies);
+  // console.log('favoriteMovieId-->', favoriteMovieId);
 
   //filter the id
   const favoriteMovieList = movies.filter((m) =>
     favoriteMovieId.includes(m._id)
   );
-  console.log('favoriteMovieList - movies--> ', movies);
+  // console.log('favoriteMovieList - movies--> ', movies);
 
-  console.log('favoriteMovieList--> ', favoriteMovieList);
+  // console.log('favoriteMovieList--> ', favoriteMovieList);
 
   //DELETE favorite movie from the list
   const handleFavMovieDelete = (movieId) => {

@@ -9,7 +9,7 @@ export function ProfileView(props) {
   //useState
   const [user, setUser] = useState(props.user);
   const movies = props.movies;
-  console.log('ProfileView-movies-->', props.movies);
+  // console.log('ProfileView-movies-->', props.movies);
   //initially empty
   const [favoriteMovies, setFavoriteMovies] = useState([]);
 

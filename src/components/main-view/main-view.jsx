@@ -191,7 +191,7 @@ export class MainView extends React.Component {
                       user={user}
                       onBackClick={() => history.goBack()}
                     />
-                    {console.log('main-view -->', movies)}
+                    {/* {console.log('main-view -->', movies)} */}
                   </Col>
                 );
               }}

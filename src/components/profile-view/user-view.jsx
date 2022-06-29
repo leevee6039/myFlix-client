@@ -17,7 +17,7 @@ export function UserView(props) {
             <Card.Subtitle className="mb-2 text-muted">
               Date of birth: {props.birthday?.split('T')[0]}
             </Card.Subtitle>
-            {console.log('birthday--> ', typeof props.birthday)}
+            {/* {console.log('birthday--> ', typeof props.birthday)} */}
           </Card.Body>
         </Card>
       </CardGroup>

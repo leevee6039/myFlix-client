@@ -4100,15 +4100,12 @@ class MainView extends _reactDefault.default.Component {
                                     if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Redirect, {
                                         to: "/"
                                     }));
-                                    return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
-                                        children: [
-                                            /*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
-                                                movies: movies,
-                                                user: user,
-                                                onBackClick: ()=>history.goBack()
-                                            }),
-                                            console.log('main-view -->', movies)
-                                        ]
+                                    return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
+                                            movies: movies,
+                                            user: user,
+                                            onBackClick: ()=>history.goBack()
+                                        })
                                     }));
                                 },
                                 __source: {
@@ -45137,25 +45134,24 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactBootstrap = require("react-bootstrap");
 function GenreView({ genre , onBackClick  }) {
-    return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
         children: [
-            console.log(genre),
             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.CardGroup, {
                 __source: {
                     fileName: "src/components/genre-view/genre-view.jsx",
-                    lineNumber: 8
+                    lineNumber: 7
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 9
+                        lineNumber: 8
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                         __source: {
                             fileName: "src/components/genre-view/genre-view.jsx",
-                            lineNumber: 10
+                            lineNumber: 9
                         },
                         __self: this,
                         children: [
@@ -45163,21 +45159,21 @@ function GenreView({ genre , onBackClick  }) {
                                 className: "mb-5",
                                 __source: {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 11
+                                    lineNumber: 10
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("u", {
                                     className: "text-primary",
                                     __source: {
                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 12
+                                        lineNumber: 11
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                                         className: "h1",
                                         __source: {
                                             fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 13
+                                            lineNumber: 12
                                         },
                                         __self: this,
                                         children: "Genre Details:"
@@ -45188,7 +45184,7 @@ function GenreView({ genre , onBackClick  }) {
                                 className: "mb-4",
                                 __source: {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 16
+                                    lineNumber: 15
                                 },
                                 __self: this,
                                 children: [
@@ -45197,7 +45193,7 @@ function GenreView({ genre , onBackClick  }) {
                                         className: "text-muted",
                                         __source: {
                                             fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 18
+                                            lineNumber: 17
                                         },
                                         __self: this,
                                         children: genre.Name
@@ -45208,7 +45204,7 @@ function GenreView({ genre , onBackClick  }) {
                                 className: "mb-4",
                                 __source: {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 20
+                                    lineNumber: 19
                                 },
                                 __self: this,
                                 children: [
@@ -45217,7 +45213,7 @@ function GenreView({ genre , onBackClick  }) {
                                         className: "text-muted",
                                         __source: {
                                             fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 22
+                                            lineNumber: 21
                                         },
                                         __self: this,
                                         children: genre.Description
@@ -45232,7 +45228,7 @@ function GenreView({ genre , onBackClick  }) {
                                 varient: "secondary",
                                 __source: {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 24
+                                    lineNumber: 23
                                 },
                                 __self: this,
                                 children: "Back"
@@ -45279,7 +45275,7 @@ function ProfileView(props) {
     //useState
     const [user, setUser] = _react.useState(props.user);
     const movies = props.movies;
-    console.log('ProfileView-movies-->', props.movies);
+    // console.log('ProfileView-movies-->', props.movies);
     //initially empty
     const [favoriteMovies, setFavoriteMovies] = _react.useState([]);
     //from localStorage
@@ -45512,8 +45508,7 @@ function UserView(props) {
                                     "Date of birth: ",
                                     props.birthday?.split('T')[0]
                                 ]
-                            }),
-                            console.log('birthday--> ', typeof props.birthday)
+                            })
                         ]
                     })
                 })
@@ -45879,13 +45874,13 @@ function FavoriteMoviesView({ favoriteMovies , token , movies , currentUser  }) 
     //map Movie ID function
     const favoriteMovieId = favoriteMovies.map((id)=>id
     );
-    console.log('favoriteMovies from fav view--> ', favoriteMovies);
-    console.log('favoriteMovieId-->', favoriteMovieId);
+    // console.log('favoriteMovies from fav view--> ', favoriteMovies);
+    // console.log('favoriteMovieId-->', favoriteMovieId);
     //filter the id
     const favoriteMovieList = movies.filter((m)=>favoriteMovieId.includes(m._id)
     );
-    console.log('favoriteMovieList - movies--> ', movies);
-    console.log('favoriteMovieList--> ', favoriteMovieList);
+    // console.log('favoriteMovieList - movies--> ', movies);
+    // console.log('favoriteMovieList--> ', favoriteMovieList);
     //DELETE favorite movie from the list
     const handleFavMovieDelete = (movieId)=>{
         _axiosDefault.default.delete(`https://lee-movies.herokuapp.com/users/${currentUser}/movies/${movieId}`, {
