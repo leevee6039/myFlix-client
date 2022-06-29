@@ -16,10 +16,10 @@ export function UpdateView({ user, token }) {
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
   const [fieldErrors, setFieldErrors] = useState({
-    usernameErr: ''
-    // passwordErr: '',
-    // emailErr: '',
-    // birthdayErr: ''
+    usernameErr: '',
+    passwordErr: '',
+    emailErr: '',
+    birthdayErr: ''
   });
 
   const validate = () => {
