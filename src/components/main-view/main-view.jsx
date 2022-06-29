@@ -145,7 +145,7 @@ export class MainView extends React.Component {
                 return (
                   <Col>
                     <DirectorView
-                      movie={
+                      director={
                         movies.find(
                           (m) => m.Director.Name === match.params.name
                         ).Director
@@ -169,7 +169,7 @@ export class MainView extends React.Component {
                 return (
                   <Col>
                     <GenreView
-                      movie={
+                      genre={
                         movies.find((m) => m.Genre.Name === match.params.name)
                           .Genre
                       }
