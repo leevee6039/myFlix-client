@@ -16,7 +16,7 @@ import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
-import UpdateUser from '../profile-view/update-user';
+// import UpdateUser from '../profile-view/update-user';
 
 import { Button, Col, Container, Row } from 'react-bootstrap';
 
@@ -182,13 +182,6 @@ export class MainView extends React.Component {
             <Route
               path={`/users/${user}`}
               render={({ history }) => {
-                // if (!user)
-                //   return (
-                //     <Col>
-                //       <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                //     </Col>
-                //   );
-                // if (movies.length === 0) return <div className="main-view" />;
                 if (!user) return <Redirect to="/" />;
 
                 return (
@@ -198,11 +191,12 @@ export class MainView extends React.Component {
                       user={user}
                       onBackClick={() => history.goBack()}
                     />
+                    {console.log('main-view -->', movies)}
                   </Col>
                 );
               }}
             />
-            <Route
+            {/* <Route
               path={`/users/:username`}
               render={({ match, history }) => {
                 if (!user) return <Redirect to="/" />;
@@ -216,7 +210,7 @@ export class MainView extends React.Component {
                   </Col>
                 );
               }}
-            />
+            /> */}
             {/* </Routes> */}
           </Row>
         </Router>
