@@ -45550,7 +45550,10 @@ function UpdateView({ user , token  }) {
     const [email, setEmail] = _react.useState('');
     const [birthday, setBirthday] = _react.useState('');
     const [fieldErrors, setFieldErrors] = _react.useState({
-        usernameErr: ''
+        usernameErr: '',
+        passwordErr: '',
+        emailErr: '',
+        birthdayErr: ''
     });
     const validate = ()=>{
         let isReq = true;
@@ -45842,7 +45845,7 @@ function UpdateView({ user , token  }) {
         ]
     }));
 }
-_s(UpdateView, "/vv/emzRTFXYbu5M/4Ze8njbyXs=");
+_s(UpdateView, "2YXlb0txzeZRPAx0CDxQ8AB5nsw=");
 _c = UpdateView;
 var _c;
 $RefreshReg$(_c, "UpdateView");
