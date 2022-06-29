@@ -88,7 +88,7 @@ export function UpdateView({ user, token }) {
       <CardGroup>
         <Card>
           <Card.Body>
-            <Card.Title>Update Username</Card.Title>
+            <Card.Title>Update Personal Info</Card.Title>
             <Form>
               <Form.Group className="mb-3" controlId="formUsername">
                 <Form.Label>Username:</Form.Label>
