@@ -33,21 +33,21 @@ export function UpdateView({ user, token }) {
         usernameErr: 'Username must be 2 characters long'
       });
       isReq = false;
-      // } else if (!password) {
-      //   setFieldErrors({ ...fieldErrors, passwordErr: 'Password required' });
-      //   isReq = false;
-      // } else if (password.length < 6) {
-      //   setFieldErrors({
-      //     ...fieldErrors,
-      //     passwordErr: 'Password must be 6 characters long'
-      //   });
-      //   isReq = false;
-      // } else if (!email) {
-      //   setFieldErrors({ ...fieldErrors, emailErr: 'Email required' });
-      //   isReq = false;
-      // } else if (email.indexOf('@') === -1) {
-      //   setFieldErrors({ ...fieldErrors, emailErr: 'Invalid email' });
-      //   isReq = false;
+    } else if (!password) {
+      setFieldErrors({ ...fieldErrors, passwordErr: 'Password required' });
+      isReq = false;
+    } else if (password.length < 6) {
+      setFieldErrors({
+        ...fieldErrors,
+        passwordErr: 'Password must be 6 characters long'
+      });
+      isReq = false;
+    } else if (!email) {
+      setFieldErrors({ ...fieldErrors, emailErr: 'Email required' });
+      isReq = false;
+    } else if (email.indexOf('@') === -1) {
+      setFieldErrors({ ...fieldErrors, emailErr: 'Invalid email' });
+      isReq = false;
     }
     return isReq;
   };
@@ -109,13 +109,13 @@ export function UpdateView({ user, token }) {
                 <Form.Label>Password:</Form.Label>
                 <Form.Control
                   type="password"
-                  value="*******"
-                  // onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your Password"
                   minLength="8"
                   required
                   autoComplete="off"
-                  disabled
+                  // disabled
                 />
                 <Form.Text className="text-muted">
                   Your password must be 8 or more characters.
@@ -129,12 +129,12 @@ export function UpdateView({ user, token }) {
                 <Form.Label>Email:</Form.Label>
                 <Form.Control
                   type="email"
-                  value={user.Email}
-                  // onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your Email"
                   required
                   autoComplete="off"
-                  disabled
+                  // disabled
                 />
                 {fieldErrors.emailErr && (
                   <p className="text-danger">{fieldErrors.emailErr}</p>
@@ -145,11 +145,11 @@ export function UpdateView({ user, token }) {
                 <Form.Label>Date of birth:</Form.Label>
                 <Form.Control
                   type="date"
-                  value={user.Birthday?.split('T')[0]}
-                  // onChange={(e) => setBirthday(e.target.value)}
+                  value={birthday?.split('T')[0]}
+                  onChange={(e) => setBirthday(e.target.value)}
                   required
                   autoComplete="off"
-                  disabled
+                  // disabled
                 />
               </Form.Group>
 

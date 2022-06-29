@@ -45351,21 +45351,30 @@ function UpdateView({ user , token  }) {
                 usernameErr: 'Username must be 2 characters long'
             });
             isReq = false;
-        // } else if (!password) {
-        //   setFieldErrors({ ...fieldErrors, passwordErr: 'Password required' });
-        //   isReq = false;
-        // } else if (password.length < 6) {
-        //   setFieldErrors({
-        //     ...fieldErrors,
-        //     passwordErr: 'Password must be 6 characters long'
-        //   });
-        //   isReq = false;
-        // } else if (!email) {
-        //   setFieldErrors({ ...fieldErrors, emailErr: 'Email required' });
-        //   isReq = false;
-        // } else if (email.indexOf('@') === -1) {
-        //   setFieldErrors({ ...fieldErrors, emailErr: 'Invalid email' });
-        //   isReq = false;
+        } else if (!password) {
+            setFieldErrors({
+                ...fieldErrors,
+                passwordErr: 'Password required'
+            });
+            isReq = false;
+        } else if (password.length < 6) {
+            setFieldErrors({
+                ...fieldErrors,
+                passwordErr: 'Password must be 6 characters long'
+            });
+            isReq = false;
+        } else if (!email) {
+            setFieldErrors({
+                ...fieldErrors,
+                emailErr: 'Email required'
+            });
+            isReq = false;
+        } else if (email.indexOf('@') === -1) {
+            setFieldErrors({
+                ...fieldErrors,
+                emailErr: 'Invalid email'
+            });
+            isReq = false;
         }
         return isReq;
     };
@@ -45491,13 +45500,13 @@ function UpdateView({ user , token  }) {
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                 type: "password",
-                                                value: "*******",
-                                                // onChange={(e) => setPassword(e.target.value)}
+                                                value: password,
+                                                onChange: (e)=>setPassword(e.target.value)
+                                                ,
                                                 placeholder: "Enter your Password",
                                                 minLength: "8",
                                                 required: true,
                                                 autoComplete: "off",
-                                                disabled: true,
                                                 __source: {
                                                     fileName: "src/components/profile-view/update-view.jsx",
                                                     lineNumber: 110
@@ -45543,12 +45552,12 @@ function UpdateView({ user , token  }) {
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                 type: "email",
-                                                value: user.Email,
-                                                // onChange={(e) => setEmail(e.target.value)}
+                                                value: email,
+                                                onChange: (e)=>setEmail(e.target.value)
+                                                ,
                                                 placeholder: "Enter your Email",
                                                 required: true,
                                                 autoComplete: "off",
-                                                disabled: true,
                                                 __source: {
                                                     fileName: "src/components/profile-view/update-view.jsx",
                                                     lineNumber: 130
@@ -45585,11 +45594,11 @@ function UpdateView({ user , token  }) {
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                 type: "date",
-                                                value: user.Birthday?.split('T')[0],
-                                                // onChange={(e) => setBirthday(e.target.value)}
+                                                value: birthday?.split('T')[0],
+                                                onChange: (e)=>setBirthday(e.target.value)
+                                                ,
                                                 required: true,
                                                 autoComplete: "off",
-                                                disabled: true,
                                                 __source: {
                                                     fileName: "src/components/profile-view/update-view.jsx",
                                                     lineNumber: 146
