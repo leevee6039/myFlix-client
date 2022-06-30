@@ -44863,13 +44863,13 @@ function Menubar({ user  }) {
                 variant: "light",
                 __source: {
                     fileName: "src/components/navbar/navbar.jsx",
-                    lineNumber: 23
+                    lineNumber: 24
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
                     __source: {
                         fileName: "src/components/navbar/navbar.jsx",
-                        lineNumber: 30
+                        lineNumber: 31
                     },
                     __self: this,
                     children: [
@@ -44878,7 +44878,7 @@ function Menubar({ user  }) {
                             className: "navbar-logo",
                             __source: {
                                 fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 31
+                                lineNumber: 32
                             },
                             __self: this,
                             children: "myFlix"
@@ -44887,7 +44887,7 @@ function Menubar({ user  }) {
                             "aria-controls": "responsive-navbar-nav",
                             __source: {
                                 fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 34
+                                lineNumber: 35
                             },
                             __self: this
                         }),
@@ -44895,14 +44895,14 @@ function Menubar({ user  }) {
                             id: "responsive-navbar-nav",
                             __source: {
                                 fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 35
+                                lineNumber: 36
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Nav, {
                                 className: "ml-auto",
                                 __source: {
                                     fileName: "src/components/navbar/navbar.jsx",
-                                    lineNumber: 36
+                                    lineNumber: 37
                                 },
                                 __self: this,
                                 children: [
@@ -44910,7 +44910,7 @@ function Menubar({ user  }) {
                                         href: `/users/${user}`,
                                         __source: {
                                             fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 37
+                                            lineNumber: 38
                                         },
                                         __self: this,
                                         children: user
@@ -44923,7 +44923,7 @@ function Menubar({ user  }) {
                                         },
                                         __source: {
                                             fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 39
+                                            lineNumber: 40
                                         },
                                         __self: this,
                                         children: "Logout"
@@ -44932,16 +44932,16 @@ function Menubar({ user  }) {
                                         href: "/",
                                         __source: {
                                             fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 49
+                                            lineNumber: 50
                                         },
                                         __self: this,
                                         children: "Sign-in"
                                     }),
                                     !isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                        herf: "/register",
+                                        href: "/register",
                                         __source: {
                                             fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 50
+                                            lineNumber: 51
                                         },
                                         __self: this,
                                         children: "Sign-up"
