@@ -9,6 +9,7 @@ import {
   CardGroup,
   Card
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import './login-view.scss';
 
@@ -100,6 +101,9 @@ export function LoginView(props) {
                   >
                     Submit
                   </Button>
+                  <Card.Text className="mt-2">
+                    Not a user? <Link to={`/register`}>Register Here</Link>
+                  </Card.Text>
                 </Form>
               </Card.Body>
             </Card>

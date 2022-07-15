@@ -11,6 +11,7 @@ import {
 } from 'react-bootstrap';
 
 import './registration-view.scss';
+import { Link } from 'react-router-dom';
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
@@ -158,6 +159,9 @@ export function RegistrationView(props) {
                   >
                     Register
                   </Button>
+                  <Card.Text className="mt-2">
+                    Already Registered? <Link to={`/`}>Sign-in Here</Link>
+                  </Card.Text>
                 </Form>
               </Card.Body>
             </Card>
