@@ -2,7 +2,7 @@
   "name": "myflix-client",
   "version": "1.0.0",
   "description": "Using React, build the client-side for an application called myFlix based on its existing server-side code (REST API and database).",
-  "main": "src/index.html",
+  "default": "src/index.html",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
