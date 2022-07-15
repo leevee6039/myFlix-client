@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 
 // import for redux
 import { legacy_createStore as createStore } from 'redux';
-// import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import moviesApp from './reducers/reducers';
 import { devToolsEnhancer } from 'redux-devtools-extension';
