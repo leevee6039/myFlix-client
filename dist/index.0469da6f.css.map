@@ -1,1 +1,0 @@
-{"mappings":"AAIA,SACE,aCCF","sources":["src/index.scss","%3Cinput%20css%20Rupvl4%3E"],"sourcesContent":["\n\n$color: steelblue;\n\n.my-flix {\n  color: $color;\n}","\n\n\n\n.my-flix {\n  color: steelblue;\n}\n/*# sourceMappingURL=index.0469da6f.css.map */\n"],"names":[],"version":3,"file":"index.0469da6f.css.map"}
