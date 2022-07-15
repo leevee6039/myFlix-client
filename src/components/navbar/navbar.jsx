@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export function Menubar({ user }) {
   //Logot handler
@@ -35,7 +36,14 @@ export function Menubar({ user }) {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
-              {isAuth() && <Nav.Link href={`/users/${user}`}>{user}</Nav.Link>}
+              {isAuth() && (
+                <Link
+                  className="navbar-light navbar-nav nav-link"
+                  to={`/users/${user}`}
+                >
+                  {user}
+                </Link>
+              )}
               {isAuth() && (
                 <Button
                   className="btn btn-secondary"
@@ -47,8 +55,19 @@ export function Menubar({ user }) {
                   Logout
                 </Button>
               )}
-              {!isAuth() && <Nav.Link href="/">Sign-in</Nav.Link>}
-              {!isAuth() && <Nav.Link href="/register">Sign-up</Nav.Link>}
+              {!isAuth() && (
+                <Link className="navbar-light navbar-nav nav-link" to={'/'}>
+                  Sign-in
+                </Link>
+              )}
+              {!isAuth() && (
+                <Link
+                  className="navbar-light navbar-nav nav-link"
+                  to={'/register'}
+                >
+                  Sign-up
+                </Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
