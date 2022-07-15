@@ -2,10 +2,10 @@ import React from 'react';
 import axios from 'axios';
 
 // redux import
-import { connect, Connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 // actions import
-import { setMovies } from '../../actions/actions';
+import { setMovies, setUser } from '../../actions/actions';
 
 import MoviesList from '../movies-list/movies-list';
 
@@ -34,17 +34,15 @@ class MainView extends React.Component {
   constructor() {
     super();
     // Initial state is set to null
-    this.state = {
-      user: null
-    };
+    // this.state = {
+    //   user: null
+    // };
   }
 
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem('user')
-      });
+      this.props.setUser(localStorage.getItem('user'));
       this.getMovies(accessToken);
     }
   }
@@ -66,9 +64,7 @@ class MainView extends React.Component {
   /** When a user succesfully logs in, this function updates the`user` property in state to that particular user*/
   onLoggedIn(authData) {
     console.log('authData-->', authData);
-    this.setState({
-      user: authData.user.Username
-    });
+    this.props.setUser(authData.user.Username);
 
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
@@ -76,8 +72,8 @@ class MainView extends React.Component {
   }
 
   render() {
-    const { movies } = this.props;
-    const { user } = this.state;
+    const { movies, user } = this.props;
+    // const { user } = this.state;
     return (
       <>
         <Router>
@@ -218,7 +214,7 @@ class MainView extends React.Component {
 }
 
 let mapStateToProps = (state) => {
-  return { movies: state.movies };
+  return { movies: state.movies, user: state.user };
 };
 
-export default connect(mapStateToProps, { setMovies })(MainView);
+export default connect(mapStateToProps, { setMovies, setUser })(MainView);
