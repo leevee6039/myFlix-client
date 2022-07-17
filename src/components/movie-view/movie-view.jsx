@@ -1,8 +1,29 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import { Button, Card, CardGroup, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export class MovieView extends Component {
+  //PUT add movie to favorite movie list
+  handleAddMovieToFav(movieId) {
+    const currentUser = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+    axios
+      .put(
+        `https://lee-movies.herokuapp.com/users/${currentUser}/movies/${movieId}`,
+        { headers: { Authorization: `Bearer ${token}` } },
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      .then((response) => {
+        const data = response.data;
+        console.log(data);
+        alert(`The movie was successfully to favorite's list`);
+        // window.open(`/movies/${movieId}`, '_self');
+      })
+      .catch((error) => console.error(error));
+  }
+
   render() {
     const { movie, onBackClick } = this.props;
     return (
@@ -48,13 +69,22 @@ export class MovieView extends Component {
                     <Card.Subtitle>Description:</Card.Subtitle>
                     <Card.Text>{movie.Description}</Card.Text>
                     <Button
-                      className="btn btn-secondary"
+                      className="btn btn-secondary float-right ml-2"
                       onClick={() => {
                         onBackClick();
                       }}
                       varient="secondary"
                     >
                       Back
+                    </Button>
+                    <Button
+                      className="float-right"
+                      onClick={() => {
+                        this.handleAddMovieToFav(movie._id);
+                      }}
+                      varient="primary"
+                    >
+                      Add to Favorite
                     </Button>
                   </Card.Body>
                 </Card>
