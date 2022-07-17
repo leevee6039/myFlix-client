@@ -2906,6 +2906,7 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactBootstrap = require("react-bootstrap");
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
+var _client = require("react-dom/client");
 // import for redux
 var _redux = require("redux");
 var _reactRedux = require("react-redux");
@@ -2926,17 +2927,17 @@ class MyFlixApplication extends (0, _reactDefault.default).Component {
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainViewDefault.default), {}, void 0, false, {
                     fileName: "public/index.jsx",
-                    lineNumber: 25,
+                    lineNumber: 26,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "public/index.jsx",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "public/index.jsx",
-            lineNumber: 23,
+            lineNumber: 24,
             columnNumber: 7
         }, this);
     }
@@ -2944,14 +2945,16 @@ class MyFlixApplication extends (0, _reactDefault.default).Component {
 // Finds the root of your app
 const container = document.getElementsByClassName("app-container")[0];
 // Tells React to render your app in the root DOM element
-(0, _reactDomDefault.default).render(/*#__PURE__*/ (0, _reactDefault.default).createElement(MyFlixApplication), container);
+// ReactDOM.render(React.createElement(MyFlixApplication), container);
+const root = (0, _client.createRoot)(container);
+root.render(/*#__PURE__*/ (0, _reactDefault.default).createElement(MyFlixApplication));
 
   $parcel$ReactRefreshHelpers$18cf.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-dom":"j6uA9","redux":"cDNB3","react-redux":"bdVon","./src/reducers/reducers":"eUX7T","redux-devtools-extension":"fOPxo","./src/components/main-view/main-view":"6Xprb","./index.scss":"140Qw","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-dom":"j6uA9","redux":"cDNB3","react-redux":"bdVon","./src/reducers/reducers":"eUX7T","redux-devtools-extension":"fOPxo","./src/components/main-view/main-view":"6Xprb","./index.scss":"140Qw","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom/client":"lOjBx"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("./cjs/react-jsx-dev-runtime.development.js");
 
@@ -43654,6 +43657,27 @@ $RefreshReg$(_c, "FavoriteMoviesView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ccOTx":[function() {},{}],"140Qw":[function() {},{}]},["1xC6H","6cpQs","bPwJL"], "bPwJL", "parcelRequireaec4")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ccOTx":[function() {},{}],"140Qw":[function() {},{}],"lOjBx":[function(require,module,exports) {
+"use strict";
+var m = require("react-dom");
+var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+exports.createRoot = function(c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+        return m.createRoot(c, o);
+    } finally{
+        i.usingClientEntryPoint = false;
+    }
+};
+exports.hydrateRoot = function(c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+        return m.hydrateRoot(c, h, o);
+    } finally{
+        i.usingClientEntryPoint = false;
+    }
+};
+
+},{"react-dom":"j6uA9"}]},["1xC6H","6cpQs","bPwJL"], "bPwJL", "parcelRequireaec4")
 
 //# sourceMappingURL=index.a2244003.js.map
