@@ -32,7 +32,7 @@ export class MovieView extends Component {
           <Row>
             <Col>
               <CardGroup>
-                <Card>
+                <Card className="m-3">
                   <Card.Img
                     variant="top"
                     src={movie.ImagePath}

@@ -90,6 +90,7 @@ export function ProfileView(props) {
         >
           Delete Profile
         </Button>
+        <br />
       </Container>
     </>
   );

@@ -42574,6 +42574,7 @@ class MovieView extends (0, _react.Component) {
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.CardGroup), {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
+                                className: "m-3",
                                 children: [
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
                                         variant: "top",
@@ -43133,6 +43134,11 @@ function ProfileView(props) {
                 }, void 0, false, {
                     fileName: "public/src/components/profile-view/profile-view.jsx",
                     lineNumber: 86,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                    fileName: "public/src/components/profile-view/profile-view.jsx",
+                    lineNumber: 93,
                     columnNumber: 9
                 }, this)
             ]
