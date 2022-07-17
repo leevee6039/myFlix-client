@@ -4,7 +4,7 @@
 
 A React Project using the hooks, react-redux for the state management, react-bootstrap for styles and react-router for routing.
 
-![myFlix_App_Image](src/assets/myFlixApp.png)
+![myFlix_App_Image](public/src/assets/myFlixApp.png)
 
 ## Technologies used:
 
